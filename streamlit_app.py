@@ -15,7 +15,7 @@ adjective = st.text_input("Type in an adjective")
 noun = st.text_input("Type in a noun")
 verb = st.text_input("Type in a verb in past tense")
 
-st.write("I just gave a " + noun + " twenty " + adjective + " dollars and he " + verb + " me!")
+st.write("I just gave a " + noun + " twenty " + adjective + " dollars and he " + verb + " on me!")
 
 pressed = st.button("Press me!")
 if pressed:
