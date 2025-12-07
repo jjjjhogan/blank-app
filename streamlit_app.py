@@ -1,47 +1,12 @@
 import streamlit as st
 from openai import OpenAI
+
+import key as k
 """
-# Hello World, Streamlit!
+# THIS IS THE BATTLECATS HOW TO PAGE
 
-This is a website to demonstrate Streamlit's API.
-You can stop looking at this now.
-
-Please.
+Are you bad at battlecats, well dont worry. Here is some tips on how to beat into the future chapter 2.
 """
-
-with st.form("my_form"):
-    fav_color = st.selectbox(
-        "What's your favorite color?",
-        [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue",
-            "Purple"
-        ]
-    )
-    
-    reason = st.text_area("Talk about why that's your favorite color.")
-
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        st.write("It's interesting that you like " + fav_color + ".")
-        st.write("You say it's because:")
-        st.write("""
-        ```
-        reason
-        ```
-        """.replace("reason", reason))
-
-
-import json
-from openai import OpenAI
-
-client = OpenAI(
-    api_key = "YOUR_API_KEY_GOES_HERE_IM_NOT_SHARING_MINE"
-)
-
 def get_standard_response(system_prompt, user_prompt):
     """
     Sends a prompt to the ChatGPT API where it will return a standard response.
@@ -63,27 +28,6 @@ def get_standard_response(system_prompt, user_prompt):
     )
     return response.choices[0].message.content
 
-def get_json_response(system_prompt, user_prompt):
-    """
-    Sends a prompt to the ChatGPT API where it will return a JSON response.
-    ChatGPT will not remember any prior conversations.
-
-    Parameters:
-    - system_prompt (str): Directions on how ChatGPT should act. Remember that it must request for a JSON response and include a JSON template.
-    - user_prompt (str): A prompt from the user.
-    
-    Returns:
-    - (dict): A dictionary containing ChatGPT's response in the requested JSON format.
-    """
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        response_format={ "type": "json_object" },
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ]
-    )
-    return json.loads(response.choices[0].message.content)
 
 def talk_to_chatgpt(system_prompt):
     """
@@ -123,3 +67,12 @@ def talk_to_chatgpt(system_prompt):
         chat_history.append(
             {"role": "assistant", "content": assistant_response}
         )
+
+client = OpenAI(
+    api_key = k.Key
+)
+
+response = get_standard_response('You are a pro battlecats player, who gives tips to noobs','Design a team for into the future chapter 2')
+
+st.write(response)
+
