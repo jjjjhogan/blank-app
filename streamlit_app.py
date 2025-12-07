@@ -27,7 +27,7 @@ with st.form("my_form"):
     submitted = st.form_submit_button("Submit")
     if submitted:
         st.write("It's interesting that you like " + fav_color + ".")
-        st.write("Your say it's because:")
+        st.write("You say it's because:")
         st.write("""
         ```
         reason
