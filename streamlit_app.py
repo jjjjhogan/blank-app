@@ -12,7 +12,6 @@ Please.
 if 'number' not in st.session_state:
     st.session_state['number'] = 0
 
-
 clicked_button = st.button("Press me!")
 if clicked_button:
     st.session_state['number'] += 1
