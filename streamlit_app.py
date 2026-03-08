@@ -9,11 +9,27 @@ You can stop looking at this now.
 Please.
 """
 
-if 'number' not in st.session_state:
-    st.session_state['number'] = 0
+with st.form("my_form"):
+    fav_color = st.selectbox(
+        "What's your favorite color?",
+        [
+            "Red",
+            "Orange",
+            "Yellow",
+            "Green",
+            "Blue",
+            "Purple"
+        ]
+    )
+    
+    reason = st.text_area("Talk about why that's your favorite color.")
 
-clicked_button = st.button("Press me!")
-if clicked_button:
-    st.session_state['number'] += 1
-
-st.write(st.session_state['number'])
+    submitted = st.form_submit_button("Submit")
+    if submitted:
+        st.write("It's interesting that you like " + fav_color + ".")
+        st.write("Your say it's because:")
+        st.write("""
+        ```
+        reason
+        ```
+        """.replace("reason", reason))
