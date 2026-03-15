@@ -14,4 +14,4 @@ with st.form('my-form'):
 
         if 'name' not in st.session_state:
             st.session_state['name'] = name
-        st.write(f'welcome {st.session_state["name"]}')
+        st.write(f'welcome {name}')
