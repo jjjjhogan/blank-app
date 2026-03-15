@@ -9,5 +9,7 @@ name = st.text_input("Put your name")
 if 'name' not in st.session_state:
     st.session_state['name'] = name
 
-if st.session_state['name'] != '':
+button = st.button('input name')
+
+if button:
     st.write(f'welcome {st.session_state["name"]}')
