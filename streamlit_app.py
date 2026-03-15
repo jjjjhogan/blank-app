@@ -60,7 +60,7 @@ with st.form('my_form'):
     running = True
     while(running):
         # 3
-        inquiry = st.text_input("Welcome to the Pokedex!\nWhat would you like to do?\n1. View generated Pokedex entries\n2. Create a new Pokedex entry\n3. Exit with 'q' or 'e':'")
+        inquiry = st.text_input("Welcome to the Pokedex!\nWhat would you like to do?\n1. View generated Pokedex entries\n2. Create a new Pokedex entry\n3. Exit with 'q' or 'e':'",key='welcome')
         if inquiry == '1':
             print('Here are all of your entries: ')
             if len(st.session_state['pokedex'])==0:
@@ -68,14 +68,14 @@ with st.form('my_form'):
             else:
                 for i in range(len(st.session_state['pokedex'])):
                     st.write(str(i+1) + '. ' + str(st.session_state['pokedex'][i]['name']))
-                num = st.text_input('View which pokemon')
+                num = st.text_input('View which pokemon',key='view')
 
                 st.write(printdict(st.session_state['pokedex'][int(num)-1]))
 
         elif inquiry == 'q' or inquiry == 'e':
             running = False
         else:
-            user_prompt = st.text_input('Type the pokemon you wish to add')
+            user_prompt = st.text_input('Type the pokemon you wish to add',key='add')
 
             b = st.form_submit_button('Generate entry')
             if b:
