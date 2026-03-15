@@ -24,7 +24,7 @@ def printdict(dictionary):
 
 
 client = OpenAI(
-    api_key = st.secrets['api_key']
+    api_key = st.secrets['key']
     )
 if 'pokedex' not in st.session_state:
 
