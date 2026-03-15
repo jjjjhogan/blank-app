@@ -10,7 +10,4 @@ if 'name' not in st.session_state:
     st.session_state['name'] = name
 
 if st.session_state['name'] != '':
-
-    f"""
-    Welcome {st.session_state['name']}
-    """
+    st.write(f'welcome {st.session_state['name']}')
