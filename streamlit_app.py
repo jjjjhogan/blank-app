@@ -60,7 +60,7 @@ with st.form('my_form'):
     running = True
     while(running):
         # 3
-        inquiry = st.text_input("Welcome to the Pokedex!\nWhat would you like to do?\n1. View generated Pokedex entries\n2. Create a new Pokedex entry\n3. Exit with 'q' or 'e':'",key='welcome')
+        inquiry = st.text_input("Welcome to the Pokedex!\nWhat would you like to do?\n1. View generated Pokedex entries\n2. Create a new Pokedex entry\n3. Exit with 'q' or 'e': ",key='welcome')
         if inquiry == '1':
             print('Here are all of your entries: ')
             if len(st.session_state['pokedex'])==0:
