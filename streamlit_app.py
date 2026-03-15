@@ -6,7 +6,7 @@ import streamlit as st
 
 name = st.text_input("Put your name")
 
-if name not in st.session_state:
+if 'name' not in st.session_state:
     st.session['name'] = name
 
  
