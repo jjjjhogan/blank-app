@@ -73,14 +73,14 @@ with st.form('my_form'):
             else:
                 for i in range(len(st.session_state['pokedex'])):
                     st.write(str(i+1) + '. ' + str(st.session_state['pokedex'][i]['name']))
-                num = st.text_input('What pokemon num do you want to see')
+                num = st.text_input('View which pokemon')
 
                 st.write(printdict(st.session_state['pokedex'][int(num)-1]))
 
         elif inquiry == 'q' or inquiry == 'e':
             running = False
         else:
-            user_prompt = st.text_input('What pokemon would you like to add')
+            user_prompt = st.text_input('Type the pokemon you wish to add')
 
             b = st.form_submit_button('Generate entry')
             if b:
