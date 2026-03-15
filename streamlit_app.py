@@ -10,7 +10,6 @@ if 'name' not in st.session_state:
     st.session_state['name'] = name
 
  
-if 'name' in st.session_state:
-    f"""
+f"""
     Welcome {st.session_state['name']}
     """
