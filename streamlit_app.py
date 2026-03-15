@@ -9,28 +9,10 @@ You can stop looking at this now.
 Please.
 """
 
-with st.form("my_form"):
-    fav_color = st.selectbox(
-        "What's your favorite color?",
-        [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue",
-            "Purple",
-            "Pink"
-        ]
-    )
-    
-    reason = st.text_area("Talk about why that's your favorite color.")
+number = 0
 
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        st.write("It's interesting that you like " + fav_color + ".")
-        st.write("Your say it's because:")
-        st.write(f"""
-        
-        {reason}
-        
-        """)
+clicked_button = st.button("Press me!")
+if clicked_button:
+    number += 1
+
+st.write(number)
