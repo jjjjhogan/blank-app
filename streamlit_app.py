@@ -9,7 +9,8 @@ name = st.text_input("Put your name")
 if 'name' not in st.session_state:
     st.session_state['name'] = name
 
- 
-f"""
+if st.session_state['name'] != '':
+
+    f"""
     Welcome {st.session_state['name']}
     """
