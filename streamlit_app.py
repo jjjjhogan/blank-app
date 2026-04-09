@@ -1,9 +1,6 @@
 import streamlit as st
 
-with st.chat_message('ai'):
-    st.write('What is your favorite color')
 
+robot = st.chat_message('ai',avatar='goku-1.png')
 
-
-with st.chat_message('human'):
-    st.write('I have no favorite colors I hate you robot')
+robot.write("I am goku")
