@@ -19,7 +19,7 @@ human = st.chat_message('human')
 for message in st.session_state['history']:
     if message['role'] == 'assistant':
         ai.write(message['content'])
-    else:
+    elif message['role']=='user':
         human.write(message['content'])
 
 with st.form('my-form'):
