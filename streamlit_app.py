@@ -10,7 +10,7 @@ if 'history' not in st.session_state:
         model="gpt-3.5-turbo-0125",
         messages = st.session_state['history']
     ) 
-    st.session_state['history'].append({'role':'assisstant','content':response.choices[0].message.content}) 
+    st.session_state['history'].append({'role':'assistant','content':response.choices[0].message.content}) 
 
 
 
@@ -34,7 +34,7 @@ with st.form('my-form'):
         model="gpt-3.5-turbo-0125",
         messages = st.session_state['history']
         )   
-        st.session_state['history'].append({'role':'assisstant','content':response.choices[0].message.content}) 
+        st.session_state['history'].append({'role':'assistant','content':response.choices[0].message.content}) 
 
 
 
