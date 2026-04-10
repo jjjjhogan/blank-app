@@ -5,7 +5,7 @@ from openai import OpenAI
 
 client = OpenAI(api_key=st.secrets['key'])
 if 'history' not in st.session_state:
-    st.session_state['history'] = [{'role':'system','content':'You are a word guesser bot. You will be guessing a word, ask yes or no questions to the user and use their responses to make a guess. You have 3 chances to make final guess or the round is over.'}]
+    st.session_state['history'] = [{'role':'system','content':'You are a word guesser bot. You will be guessing a word, ask yes or no questions to the user and use their responses to make a guess. You have 3 chances to make final guess or the round is over. Start with a simple queestion like "is the word a noun"'}]
     response = client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         messages = st.session_state['history']
