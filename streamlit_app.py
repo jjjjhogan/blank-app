@@ -14,13 +14,14 @@ if 'history' not in st.session_state:
 
 
 
-ai = st.chat_message('ai')
-human = st.chat_message('human')
+
 for message in st.session_state['history']:
     if message['role'] == 'assistant':
-        ai.write(message['content'])
+        with st.chat_message('ai'):
+            st.write(message['content'])
     elif message['role']=='user':
-        human.write(message['content'])
+        with st.chat_message('user'):
+            st.write(message['content'])
 
 with st.form('my-form'):
     answer = st.text_input('What is the answer to the bots question?')
