@@ -1,7 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 import pandas as pd
-d = {-1:1,0:2,1:3,2:4,3:5}
+d = {'x':[-3,-2,-1,0,1,2,3],'y':[-1,0,1,2,3,4,5]}
 
 df = pd.DataFrame(data=d)
 
