@@ -3,7 +3,7 @@ from openai import OpenAI
 import pandas as pd
 d = {-1:1,0:2,1:3,2:4,3:5}
 
-df = pd.dataframe(data=d)
+df = pd.DataFrame(data=d)
 
 st.line_chart(df,x='x',y='y')
 
