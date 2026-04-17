@@ -1,6 +1,11 @@
 import streamlit as st
 from openai import OpenAI
+from pandas import dataframe as pd
+d = {-1:1,0:2,1:3,2:4,3:5}
 
+df = pd.dataframe(data=d)
+
+st.line_chart(df,x='x',y='y')
 
 client = OpenAI(api_key=st.secrets['key'])
 with st.form('my-form'):
