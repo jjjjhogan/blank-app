@@ -1,6 +1,6 @@
 import streamlit as st
 from openai import OpenAI
-from pandas import dataframe as pd
+import pandas as pd
 d = {-1:1,0:2,1:3,2:4,3:5}
 
 df = pd.dataframe(data=d)
