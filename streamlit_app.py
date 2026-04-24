@@ -1,8 +1,14 @@
 import streamlit as st
 from openai import OpenAI
 import pandas as pd
+import requests
 d = {'x':[-3,-2,-1,0,1,2,3],'y':[-1,0,1,2,3,4,5]}
+# replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
+url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo'
+r = requests.get(url)
+data = r.json()
 
+st.write(data)
 df = pd.DataFrame(data=d)
 
 st.line_chart(df,x='x',y='y')
