@@ -37,7 +37,8 @@ morse_code = {
 if mode == "":
     st.write('Choose mode')
 elif mode == 'Learn':
-    st.session_state['letter'] = random.choice(list(morse_code.keys()))
+    if st.session_state['letter'] == '':
+        st.session_state['letter'] = random.choice(list(morse_code.keys()))
     st.write(f"Translate { st.session_state['letter']}")
     i = st.text_input("Put . and - with / inbetween for spaces")
     submit = st.button('submit')
