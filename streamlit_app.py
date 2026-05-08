@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 import pandas as pd
 
-mode = st.selectbot('Choose mode',['Learn','Game','Sentence'])
+mode = st.selectbox('Choose mode',['Learn','Game','Sentence'])
 
 if mode == "":
     st.write('Choose mode')
