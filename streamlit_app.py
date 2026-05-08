@@ -4,6 +4,8 @@ import pandas as pd
 import random
 
 mode = st.selectbox('Choose mode',['Learn','Game','Sentence'])
+if 'letter' not in st.session_state:
+    st.session_state['letter'] = ''
 morse_code = {
     "A": ".-",
     "B": "-...",
@@ -35,8 +37,16 @@ morse_code = {
 if mode == "":
     st.write('Choose mode')
 elif mode == 'Learn':
-    st.write(f"Translate {random.choice(list(morse_code.keys())) }")
+    st.session_state['letter'] = random.choice(list(morse_code.keys()))
+    st.write(f"Translate { st.session_state['letter']}")
     i = st.text_input("Put . and - with / inbetween for spaces")
+    submit = st.button('submit')
+
+    if submit:
+        if i.strip() == morse_code[st.session_state['letter']]:
+            st.write("Correct")
+        else:
+            st.write(morse_code[st.session_state['letter']])
 
 
 
