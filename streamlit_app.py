@@ -3,6 +3,8 @@ from openai import OpenAI
 import pandas as pd
 import random
 
+
+st.success('Your operation was successful')
 mode = st.selectbox('Choose mode',['Learn','Game','Sentence'])
 if 'letter' not in st.session_state:
     st.session_state['letter'] = ''
@@ -37,8 +39,8 @@ morse_code = {
 if mode == "":
     st.write('Choose mode')
 elif mode == 'Learn':
-    if st.session_state['letter'] == '':
-        st.session_state['letter'] = random.choice(list(morse_code.keys()))
+    if st.session_state['letter'] == '': st.session_state['letter'] = random.choice(list(morse_code.keys()))
+       
     st.write(f"Translate { st.session_state['letter']}")
     i = st.text_input("Put . and - with / inbetween for spaces")
     submit = st.button('submit')
